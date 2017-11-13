@@ -11,6 +11,7 @@
 	<modules>
         <module>microservice-consumer-user</module>
         <module>microservice-consumer-user-feign</module>
+        <module>microservice-consumer-user-feign-customizing</module>
         <module>microservice-consumer-user-ribbon</module>
         <module>microservice-consumer-user-ribbon-properties</module>
         <module>microservice-consumer-user-winthout-eureka</module>
