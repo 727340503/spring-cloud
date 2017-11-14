@@ -14,6 +14,7 @@
         <module>microservice-consumer-user-feign-customizing</module>
         <module>microservice-consumer-user-ribbon</module>
         <module>microservice-consumer-user-ribbon-properties</module>
+        <module>microservice-consumer-user-ribbon-resttemplate-test</module>
         <module>microservice-consumer-user-winthout-eureka</module>
         <module>microservice-provider-user</module>
         <module>microservice-eureka-server</module>

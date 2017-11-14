@@ -1,5 +1,8 @@
 package com.rahul.cloud.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -54,6 +57,20 @@ public class UserController {
 	@PostMapping("/postUser")
 	public User postUser(Long id) {
 		return userRepository.findOne(id);
+	}
+	
+	@GetMapping("userList")
+	public List<User> listUser(){
+		
+		List<User> list = new ArrayList<User>();
+		User user = new User(1L, "zhangsan");
+		User user2 = new User(2L, "liso");
+		User user3 = new User(3L, "wangsu");
+		list.add(user);
+		list.add(user2);
+		list.add(user3);
+		
+		return list;
 	}
 	
 }
