@@ -13,28 +13,8 @@ eureka.instance.prefer-ip-address=true
 #eureka.instance.instance-id=${spring.application.name}:${spring.application.instance_id:${server.port}}
 eureka.instance.instance-id=${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
 
-#--\u914d\u7f6e\u65b9\u5f0f1
 #zuul.ignoredServices \u914d\u7f6e\u662f\u5426\u81ea\u52a8\u4e3aeureka server\u4e0a\u7684\u670d\u52a1\u8fdb\u884c\u8def\u7531\u6ce8\u518c,\u5f53\u914d\u7f6e\u4e3a*\u65f6\uff0c\u5219\u8868\u793a\u4e0d\u81ea\u52a8\u6ce8\u518c
-#zuul.ignoredServices=*
+zuul.ignoredServices=*
 #microservice-provider-user\u6ce8\u518c\u5230eureka server\u7684\u670d\u52a1ID\uff0cprovider\u5b9e\u9645\u8bbf\u95ee\u7684\u8def\u5f84
 #zuul.routes.microservice-provider-user=/provider/**\u8868\u793a\uff0c\u6240\u6709\u7684/provider\u7684\u8bf7\u6c42\uff0c\u90fd\u8f6c\u53d1\u5230microservice-provider-user\u5fae\u670d\u52a1\u53bb\u5904\u7406
-#zuul.routes.microservice-provider-user=/provider/**
-
-#--\u914d\u7f6e\u65b9\u5f0f2
-#abc\u53ef\u4ee5\u968f\u4fbf\u53d6\uff0c\u53ea\u8981\u4fdd\u8bc1\u552f\u4e00\u5373\u53ef
-#path\u8bbf\u95ee\u8def\u5f84
-#serviceId\u670d\u52a1\u6ce8\u518c\u7684ID
-#zuul.routes.abc.path=/provider/**
-#zuul.routes.abc.serviceId=microservice-provider-user
-
-#--\u914d\u7f6e\u65b9\u5f0f3--\u901a\u8fc7\u914d\u7f6eurl\u65b9\u5f0f\u914d\u7f6e
-#\u6539\u914d\u7f6e\u65b9\u5f0f\u4e0d\u80fd\u8d1f\u8f7d\u5747\u8861\u3001
-#zuul.routes.users.path=/provider-url/**
-#zuul.routes.users.url=http://127.0.0.1:9000/
-
-#--\u914d\u7f6e\u65b9\u5f0f4--\u914d\u7f6eurl\uff0c\u53ef\u4ee5\u5b9e\u73b0\u8d1f\u8f7d\u5747\u8861
-#microservice-provider-user\u662f\u670d\u52a1\u7684service ID
-zuul.routes.users.path=/provider-url/**
-zuul.routes.users.serviceId=microservice-provider-user
-ribbon.eureka.enabled=false
-microservice-provider-user.ribbon.listOfServers=http://127.0.0.1:9000/,http://127.0.0.1:9001/
+zuul.routes.microservice-provider-user=/provider/**
